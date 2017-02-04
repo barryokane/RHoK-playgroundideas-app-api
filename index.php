@@ -29,6 +29,10 @@
 			<li><a href="playgrounds/get.php" target="_blank">Get all Playgrounds</a></li>
 			<li><a href="playgrounds/get.php?userId=1" target="_blank">Get all Playgrounds for one user</a></li>
 			<li><a href="playgrounds/get.php?id=1" target="_blank">Get one Playground</a></li>
+
+			<li><a href="images/get.php?userId=1&designId=1&name=test" target="_blank">Get an Image (if "name=test" image exists)</a></li>
+			<li><a href="images/get.php?userId=1&designId=1" target="_blank">Get All Images From A Playground</a></li>
+
 		</ul>
 		<hr />
 		<h5>Save Playground</h5>
@@ -82,5 +86,40 @@
 			</p>
 			<input type="submit" />
 		</form>
+		<hr />
+		<h5>Create Image</h5>
+		This will create a new image.
+		<form action="images/save.php" method="post" target="_blank" enctype="multipart/form-data">
+			<p>
+				<label for="userId">User ID:</label>
+				<input id="userId" name="userId" type="number" required/>
+			</p>
+			<p>
+				<label for="designId">Playground ID:</label>
+				<input id="designId" name="designId" type="number" required/>
+			</p>
+			<p>
+				<label for="image">Image File:</label>
+				<input id="image" name="image" type="file" />
+			</p>
+			<input type="submit" />
+		</form>
+		<hr />
+
+		<h5>Delete Image</h5>
+		This will delete a saved image.
+		<form action="images/delete.php" method="get" target="_blank" enctype="multipart/form-data">
+			<p>
+				<label for="userId">User ID:</label><input name="userId" type="number" />
+			</p>
+			<p>
+				<label for="designId">Design ID:</label><input name="designId" type="number" />
+			</p>
+			<p>
+				<label for="imageId">Image ID:</label><input name="imageId" type="number" />
+			</p>
+			<input type="submit" />
+		</form>
+		<hr />
 	</body>
 </html>

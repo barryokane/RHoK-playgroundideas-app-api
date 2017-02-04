@@ -37,6 +37,8 @@ CREATE TABLE `playgrounds` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+LOCK TABLES `playgrounds` WRITE;
+
 
 # Dump of table users
 # ------------------------------------------------------------
@@ -60,7 +62,31 @@ VALUES
 	(1,22,'Barry',NULL,NULL),
 	(3,99,'','2016-11-27 00:23:45','2016-11-27 00:23:45');
 
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+
+# Dump of table images
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `images`;
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `design_id` int(11) NOT NULL,
+  `name` varchar(155) NOT NULL,
+  `url` varchar(1000) NOT NULL,
+  `type` varchar(25) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+LOCK TABLES `images` WRITE;
+
+ALTER TABLE `images` ADD PRIMARY KEY (`id`);
+ALTER TABLE `images` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

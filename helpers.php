@@ -42,4 +42,31 @@ function ValidRequiredPost($name) {
     return isset($_POST[$name]) && $_POST[$name] != "";
 }
 
+function ValidateUploadedFile($name) {
+
+	if (
+        !isset($_FILES[$name]['error']) ||
+        is_array($_FILES[$name]['error'])
+    ) {
+		ReturnErrorData("Invalid file request");
+		die;
+    }
+
+    // Check $_FILES['upfile']['error'] value.
+    switch ($_FILES[$name]['error']) {
+        case UPLOAD_ERR_OK:
+            break;
+        case UPLOAD_ERR_NO_FILE:
+			ReturnErrorData("No image posted");
+			die;
+        case UPLOAD_ERR_INI_SIZE:
+        case UPLOAD_ERR_FORM_SIZE:
+			ReturnErrorData("Exceeded filesize limit.");
+			die;
+        default:
+			ReturnErrorData("Unknown errors.");
+			die;
+    }
+}
+
 ?>

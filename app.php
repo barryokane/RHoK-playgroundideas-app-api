@@ -37,7 +37,7 @@ if ($_SERVER['HTTP_HOST'] == "playgroundideas.endzone.io") {
 		'collation' => 'utf8_unicode_ci',
 		'prefix'    => '',
 	]);
-	define('APPROOT_URL', "http://".$_SERVER['SERVER_NAME'] . DIRECTORY_SEPARATOR);
+	define('APPROOT_URL', "http://".$_SERVER['SERVER_NAME'] ."/RHoK-playgroundideas-app-api/");
 }
 
 

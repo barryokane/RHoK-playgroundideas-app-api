@@ -4,6 +4,7 @@ include("../app.php");
 include("../models.php");
 include("../helpers.php");
 
+ValidateUploadedFile("screenshot");
 
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
@@ -39,10 +40,10 @@ if ($playground==null) {
 	$playground = new Playground();
 }
 
-
 $imagePathParts = pathinfo($_FILES['screenshot']['name']);
 $filedatestamp = date('mdYHis');
 $savedFilename = str_replace("//", "", $imagePathParts['filename']) . "-" . $filedatestamp . "." . $imagePathParts['extension'];
+$savedFilename = str_replace(" ", "_", $savedFilename);
 $uploadfile = SCREENSHOT_UPLOAD_DIR . $savedFilename;
 
 $playgroundName = GetPost("name", "New Playground");

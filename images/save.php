@@ -47,10 +47,11 @@ if (isset($_FILES['image']) && $_FILES['image'] != "") {
 	$uploadfile = SCREENSHOT_UPLOAD_DIR . $savedFilename;
 
 	if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
+		$imageName = GetPost("name", $fileName);
 		$image = Image::create([
 			'user_id'=>$userId,
             'design_id'=>$designId,
-            'name'=>$fileName,
+            'name'=>$imageName,
             'type'=>$imageType,
             'image'=>$savedFilename
 		]);

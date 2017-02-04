@@ -45,6 +45,8 @@ if (ValidRequiredQueryString("name")) {
 		ReturnErrorData("No image found for that name & designId.");
 		die;
 	}
+	//non DB field
+	$assets->full_Url = SCREENSHOT_URL_DIR.$assets->image;
 	ReturnData("image", $assets);
 } else {
 

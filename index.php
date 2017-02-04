@@ -27,11 +27,11 @@
 			<li><a href="users/get.php" target="_blank">Get all Users</a></li>
 			<li><a href="users/get.php?id=22" target="_blank">Get one User</a></li>
 			<li><a href="playgrounds/get.php" target="_blank">Get all Playgrounds</a></li>
-			<li><a href="playgrounds/get.php?userId=1" target="_blank">Get all Playgrounds for one user</a></li>
+			<li><a href="playgrounds/get.php?userId=22" target="_blank">Get all Playgrounds for one user</a></li>
 			<li><a href="playgrounds/get.php?id=1" target="_blank">Get one Playground</a></li>
 
-			<li><a href="images/get.php?userId=1&designId=1&name=test" target="_blank">Get an Image (if "name=test" image exists)</a></li>
-			<li><a href="images/get.php?userId=1&designId=1" target="_blank">Get All Images From A Playground</a></li>
+			<li><a href="images/get.php?userId=22&designId=1&name=test" target="_blank">Get an Image (if "name=test" image exists)</a></li>
+			<li><a href="images/get.php?userId=22&designId=1" target="_blank">Get All Images From A Playground</a></li>
 
 		</ul>
 		<hr />
@@ -97,6 +97,9 @@
 			<p>
 				<label for="designId">Playground ID:</label>
 				<input id="designId" name="designId" type="number" required/>
+			</p>
+			<p>
+				<label for="name">Image Name (leave blank to use filename):</label><input name="name" type="text" />
 			</p>
 			<p>
 				<label for="image">Image File:</label>

@@ -17,3 +17,11 @@
   - Get Playground with id x: /playgrounds/get.php?id={x}
   - Save Playground: /playgrounds/save.php
 		- Post vars: userId, name, screenshot (image file)
+  - Delete Playground: /playgrounds/delete.php?userId={x}&designId={y}
+
+ Images:
+  - Get all images for one playground: /images/get.php?userId={x}&designId={y}
+  - Get one image: /images/get.php?userId={x}&designId={y}&name={n}
+  - Save Image: /images/save.php
+		- Post vars: userId, designId (playground id), name (optional), image (image file)
+  - Delete Image: /images/delete.php?userId={x}&designId={y}&imageId={i}

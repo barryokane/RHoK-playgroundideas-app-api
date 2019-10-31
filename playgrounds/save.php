@@ -32,7 +32,7 @@ if (ValidRequiredPost("designId")) {
 	if ($playground->user_id !== $user->user_id){
 		ReturnErrorData("Error saving (cannot change user for an existing playground)");
 		die;
-	}
+	}	
 }
 
 if ($playground==null) {
@@ -51,6 +51,7 @@ $playground->user_Id = $userId;
 $playground->name = $playgroundName;
 $playground->screenshot = $savedFilename;
 $playground->model = GetPost("model", "");
+$playground->public = GetPost("public", "");
 
 if (move_uploaded_file($_FILES['screenshot']['tmp_name'], $uploadfile)) {
 

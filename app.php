@@ -10,20 +10,20 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
 
-if ($_SERVER['HTTP_HOST'] == "playgroundideas.endzone.io") {
+if ($_SERVER['HTTP_HOST'] == $_SERVER['HTTP_HOST']) {
 	//hosted testing version
 	$capsule->addConnection([
 		'driver'    => 'mysql',
 		'host'      => 'localhost',
-		'database'  => 'mygiftvo_playgroundideas',
-		'username'  => 'mygiftvo_playgro',
-		'password'  => 'DRm1ReA3R3Ex',
+		'database'  => 'liveplay_designer_api',
+		'username'  => 'liveplay_wpnew',
+		'password'  => ')QkP?UsK]*Iv',
 		'charset'   => 'utf8',
 		'collation' => 'utf8_unicode_ci',
 		'prefix'    => '',
 	]);
 
-	define('APPROOT_URL', "http://".$_SERVER['SERVER_NAME'] . "/app-api" . DIRECTORY_SEPARATOR);
+	define('APPROOT_URL', "http://".$_SERVER['SERVER_NAME'] . "/designer_api" . DIRECTORY_SEPARATOR);
 
 } else {
 	//local testing version

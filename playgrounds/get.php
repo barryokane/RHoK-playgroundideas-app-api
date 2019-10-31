@@ -16,7 +16,7 @@ if (ValidRequiredQueryString("userId")) {
 		die;
 	}
 
-	$plays = PlayGround::where("user_id", $userId)->get();
+	$plays = PlayGround::where("user_id", $userId)->latest()->get();
 	foreach ($plays as $p) {
 		//non DB field
 		$p->Screenshot_Url = SCREENSHOT_URL_DIR.$p->screenshot;

@@ -33,6 +33,13 @@ if (ValidRequiredQueryString("designId")) {
 		die;
 	}
 
+	//delete screenshot file
+	$uploadedFile = SCREENSHOT_UPLOAD_DIR . $play->screenshot;
+	if (file_exists($uploadedFile)) {
+		unlink($uploadedFile);
+	}
+
+	//delete from DB
 	$play->delete();
 
 	ReturnData("playground_delete", "done");

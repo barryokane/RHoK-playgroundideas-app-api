@@ -47,6 +47,13 @@ if (ValidRequiredQueryString("imageId")) {
 		die;
 	}
 
+	//delete screenshot file
+	$uploadedFile = SCREENSHOT_UPLOAD_DIR . $asset->image;
+	if (file_exists($uploadedFile)) {
+		unlink($uploadedFile);
+	}
+
+	//delete from DB
 	$asset->delete();
 
 	ReturnData("image_delete", "done");
